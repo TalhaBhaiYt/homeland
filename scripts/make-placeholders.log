@@ -1,0 +1,3 @@
+resources/originals: aurora.png, chrome.png, terrain.png
+public/images: aurora.webp, chrome.webp, hero-art.webp, terrain.webp
+SUCCESS
