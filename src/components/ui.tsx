@@ -10,7 +10,7 @@ function DcIcon()  { return <svg width="16" height="16" viewBox="0 0 24 24" fill
 function WaIcon()  { return <Phone size={16} aria-hidden="true"/>; }
 function EmIcon()  { return <Mail  size={16} aria-hidden="true"/>; }
 
-const SOCIALS: { label: string; href: string; Ico: () => JSX.Element; color: string }[] = [
+const SOCIALS: { label: string; href: string; Ico: () => React.ReactElement; color: string }[] = [
   { label: 'Instagram', href: 'https://instagram.com/im_klay01',  Ico: IgIcon, color: '#e1306c' },
   { label: 'YouTube',   href: 'https://youtube.com/@klay_x04',     Ico: YtIcon, color: '#ff0000' },
   { label: 'Discord',   href: 'https://discord.gg/7hYe4NCPwJ',    Ico: DcIcon, color: '#5865f2' },
