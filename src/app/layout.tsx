@@ -4,6 +4,7 @@ import { getUser } from '@/lib/auth';
 import { Navbar, Providers } from '@/components/shell';
 import { Footer } from '@/components/ui';
 import SmoothScroll from '@/components/smooth-scroll';
+import LoadingBar from '@/components/loading-bar';
 import './globals.css';
 
 export const dynamic = 'force-dynamic';
@@ -12,6 +13,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://homeland.example'),
   title: { default: 'HOMELAND — Discover. Download. Create.', template: '%s — HOMELAND' },
   description: 'Your premium destination for digital content, creator resources, tools, downloads and community creations.',
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
     title: 'HOMELAND — Discover. Download. Create.',
     description: 'A home for your next big idea. Explore premium digital resources from creators and the community.',
@@ -31,6 +36,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>
+        <LoadingBar />
         <Providers>
           <SmoothScroll>
             <a className="skip-link" href="#main">Skip to content</a>
