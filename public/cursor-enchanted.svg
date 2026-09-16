@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <!-- Enchantment Glint Gradient -->
+    <linearGradient id="enchantGlint" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#00ffff;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <!-- Glint Animation -->
+    <filter id="glint">
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Netherite Sword Handle -->
+  <rect x="12" y="16" width="8" height="12" fill="#3d3d3d" rx="1"/>
+  <rect x="14" y="18" width="4" height="8" fill="#2a2a2a" rx="0.5"/>
+  
+  <!-- Netherite Sword Blade with Enchantment -->
+  <path d="M16 2 L10 16 L16 16 L16 2 Z" fill="#4a4a4a"/>
+  <path d="M16 2 L22 16 L16 16 L16 2 Z" fill="#3a3a3a"/>
+  <path d="M16 2 L12 8 L16 8 L16 2 Z" fill="#5a5a5a"/>
+  <path d="M16 2 L20 8 L16 8 L16 2 Z" fill="#4a4a4a"/>
+  
+  <!-- Enchantment Glint Overlay -->
+  <path d="M16 2 L10 16 L16 16 L16 2 Z" fill="url(#enchantGlint)" filter="url(#glint)" opacity="0.7"/>
+  <path d="M16 2 L22 16 L16 16 L16 2 Z" fill="url(#enchantGlint)" filter="url(#glint)" opacity="0.7"/>
+  
+  <!-- Additional Glint Lines -->
+  <line x1="14" y1="4" x2="12" y2="12" stroke="#ff00ff" stroke-width="1" opacity="0.8" filter="url(#glint)"/>
+  <line x1="18" y1="4" x2="20" y2="12" stroke="#00ffff" stroke-width="1" opacity="0.8" filter="url(#glint)"/>
+  <line x1="16" y1="6" x2="16" y2="14" stroke="#ff00ff" stroke-width="1" opacity="0.6" filter="url(#glint)"/>
+  
+  <!-- Netherite Guard -->
+  <rect x="10" y="14" width="12" height="3" fill="#4a4a4a" rx="0.5"/>
+  <rect x="12" y="15" width="8" height="1" fill="#3a3a3a"/>
+  
+  <!-- Netherite Pommel -->
+  <rect x="14" y="28" width="4" height="2" fill="#4a4a4a" rx="0.5"/>
+</svg>

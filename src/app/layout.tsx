@@ -5,6 +5,7 @@ import { Navbar, Providers } from '@/components/shell';
 import { Footer } from '@/components/ui';
 import SmoothScroll from '@/components/smooth-scroll';
 import LoadingBar from '@/components/loading-bar';
+import SwordCursor from '@/components/sword-cursor';
 import './globals.css';
 
 export const dynamic = 'force-dynamic';
@@ -37,6 +38,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       </head>
       <body>
         <LoadingBar />
+        <SwordCursor />
         <Providers>
           <SmoothScroll>
             <a className="skip-link" href="#main">Skip to content</a>

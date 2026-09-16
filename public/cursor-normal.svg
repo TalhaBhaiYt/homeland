@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Netherite Sword Handle -->
+  <rect x="12" y="16" width="8" height="12" fill="#3d3d3d" rx="1"/>
+  <rect x="14" y="18" width="4" height="8" fill="#2a2a2a" rx="0.5"/>
+  
+  <!-- Netherite Sword Blade -->
+  <path d="M16 2 L10 16 L16 16 L16 2 Z" fill="#4a4a4a"/>
+  <path d="M16 2 L22 16 L16 16 L16 2 Z" fill="#3a3a3a"/>
+  <path d="M16 2 L12 8 L16 8 L16 2 Z" fill="#5a5a5a"/>
+  <path d="M16 2 L20 8 L16 8 L16 2 Z" fill="#4a4a4a"/>
+  
+  <!-- Netherite Guard -->
+  <rect x="10" y="14" width="12" height="3" fill="#4a4a4a" rx="0.5"/>
+  <rect x="12" y="15" width="8" height="1" fill="#3a3a3a"/>
+  
+  <!-- Netherite Pommel -->
+  <rect x="14" y="28" width="4" height="2" fill="#4a4a4a" rx="0.5"/>
+</svg>
