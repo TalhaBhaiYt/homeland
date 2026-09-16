@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   title: { default: 'HOMELAND — Discover. Download. Create.', template: '%s — HOMELAND' },
   description: 'Your premium destination for digital content, creator resources, tools, downloads and community creations.',
   icons: {
-    icon: '/favicon.png',
-    apple: '/favicon.png',
+    icon: '/images/smp-logo.png',
+    apple: '/images/smp-logo.png',
   },
   openGraph: {
     title: 'HOMELAND — Discover. Download. Create.',

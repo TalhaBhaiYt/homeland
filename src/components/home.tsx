@@ -141,7 +141,7 @@ function HeroSection({ homepage }: { homepage: Record<string, unknown> }) {
             <ArrowUpRight size={12} />
           </div>
           <div className="hero-title-wrapper">
-            <img src="/homeland.png" alt="HOMELAND" className="hero-logo" />
+            <img src="/images/smp-logo.png" alt="HOMELAND SMP logo" className="hero-smp-logo" width="120" height="120" />
             <h1 ref={titleRef}>DISCOVER.<br />DOWNLOAD.<br /><span>CREATE.</span></h1>
           </div>
           <div ref={copyRef}>
