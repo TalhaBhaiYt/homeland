@@ -140,7 +140,10 @@ function HeroSection({ homepage }: { homepage: Record<string, unknown> }) {
             {String(homepage.eyebrow || 'A HOME FOR YOUR NEXT BIG IDEA')}
             <ArrowUpRight size={12} />
           </div>
-          <h1 ref={titleRef}>DISCOVER.<br />DOWNLOAD.<br /><span>CREATE.</span></h1>
+          <div className="hero-title-wrapper">
+            <img src="/homeland.png" alt="HOMELAND" className="hero-logo" />
+            <h1 ref={titleRef}>DISCOVER.<br />DOWNLOAD.<br /><span>CREATE.</span></h1>
+          </div>
           <div ref={copyRef}>
             <p>{String(homepage.description || 'Your premium destination for digital content, creator resources, tools, downloads and community creations.')}</p>
             <div className="hero-buttons">
