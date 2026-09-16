@@ -1,45 +1,161 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="36" viewBox="0 0 24 36" shape-rendering="crispEdges">
   <defs>
-    <!-- Enchantment Glint Gradient -->
-    <linearGradient id="enchantGlint" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:0.8" />
-      <stop offset="50%" style="stop-color:#00ffff;stop-opacity:0.6" />
-      <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:0.8" />
+    <!-- Enchantment glint gradient (Minecraft-style purple) -->
+    <linearGradient id="glint" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#a855f7" stop-opacity="0.85"/>
+      <stop offset="50%"  stop-color="#7c3aed" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.85"/>
     </linearGradient>
-    
-    <!-- Glint Animation -->
-    <filter id="glint">
-      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+    <linearGradient id="glint2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#22d3ee" stop-opacity="0.85"/>
+      <stop offset="50%"  stop-color="#a855f7" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#f0abfc" stop-opacity="0.85"/>
+    </linearGradient>
+    <!-- Soft outer glow -->
+    <filter id="outerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.4" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
-  
-  <!-- Netherite Sword Handle -->
-  <rect x="12" y="16" width="8" height="12" fill="#3d3d3d" rx="1"/>
-  <rect x="14" y="18" width="4" height="8" fill="#2a2a2a" rx="0.5"/>
-  
-  <!-- Netherite Sword Blade with Enchantment -->
-  <path d="M16 2 L10 16 L16 16 L16 2 Z" fill="#4a4a4a"/>
-  <path d="M16 2 L22 16 L16 16 L16 2 Z" fill="#3a3a3a"/>
-  <path d="M16 2 L12 8 L16 8 L16 2 Z" fill="#5a5a5a"/>
-  <path d="M16 2 L20 8 L16 8 L16 2 Z" fill="#4a4a4a"/>
-  
-  <!-- Enchantment Glint Overlay -->
-  <path d="M16 2 L10 16 L16 16 L16 2 Z" fill="url(#enchantGlint)" filter="url(#glint)" opacity="0.7"/>
-  <path d="M16 2 L22 16 L16 16 L16 2 Z" fill="url(#enchantGlint)" filter="url(#glint)" opacity="0.7"/>
-  
-  <!-- Additional Glint Lines -->
-  <line x1="14" y1="4" x2="12" y2="12" stroke="#ff00ff" stroke-width="1" opacity="0.8" filter="url(#glint)"/>
-  <line x1="18" y1="4" x2="20" y2="12" stroke="#00ffff" stroke-width="1" opacity="0.8" filter="url(#glint)"/>
-  <line x1="16" y1="6" x2="16" y2="14" stroke="#ff00ff" stroke-width="1" opacity="0.6" filter="url(#glint)"/>
-  
-  <!-- Netherite Guard -->
-  <rect x="10" y="14" width="12" height="3" fill="#4a4a4a" rx="0.5"/>
-  <rect x="12" y="15" width="8" height="1" fill="#3a3a3a"/>
-  
-  <!-- Netherite Pommel -->
-  <rect x="14" y="28" width="4" height="2" fill="#4a4a4a" rx="0.5"/>
+
+  <!-- Outer purple aura (drawn behind the sword) -->
+  <g opacity="0.55">
+    <rect x="6"  y="0"  width="12" height="2" fill="#a855f7" opacity="0.25"/>
+    <rect x="4"  y="2"  width="16" height="2" fill="#a855f7" opacity="0.22"/>
+    <rect x="4"  y="4"  width="16" height="2" fill="#a855f7" opacity="0.20"/>
+    <rect x="4"  y="6"  width="16" height="2" fill="#a855f7" opacity="0.18"/>
+    <rect x="4"  y="8"  width="16" height="2" fill="#a855f7" opacity="0.18"/>
+    <rect x="4"  y="10" width="16" height="2" fill="#a855f7" opacity="0.18"/>
+    <rect x="4"  y="12" width="16" height="2" fill="#a855f7" opacity="0.20"/>
+    <rect x="4"  y="14" width="16" height="2" fill="#a855f7" opacity="0.22"/>
+    <rect x="4"  y="16" width="16" height="2" fill="#a855f7" opacity="0.25"/>
+    <rect x="4"  y="18" width="16" height="2" fill="#a855f7" opacity="0.28"/>
+    <rect x="2"  y="20" width="20" height="3" fill="#a855f7" opacity="0.32"/>
+    <rect x="2"  y="23" width="20" height="2" fill="#a855f7" opacity="0.30"/>
+    <rect x="8"  y="25" width="8"  height="8" fill="#a855f7" opacity="0.28"/>
+    <rect x="7"  y="31" width="10" height="4" fill="#a855f7" opacity="0.32"/>
+  </g>
+
+  <!-- Sword geometry (identical to normal) -->
+  <g filter="url(#outerGlow)">
+    <!-- Row 0 (tip) -->
+    <rect x="11" y="0" width="2" height="1" fill="#3a3a40"/>
+    <!-- Rows 1-2 -->
+    <rect x="10" y="1" width="4" height="1" fill="#3a3a40"/>
+    <rect x="11" y="1" width="2" height="1" fill="#4a4a52"/>
+    <rect x="10" y="2" width="4" height="1" fill="#3a3a40"/>
+    <rect x="11" y="2" width="1" height="1" fill="#4a4a52"/>
+    <rect x="12" y="2" width="1" height="1" fill="#2d2d33"/>
+    <!-- Rows 3-5 -->
+    <rect x="9" y="3" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="3" width="2" height="1" fill="#4a4a52"/>
+    <rect x="9" y="4" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="4" width="1" height="1" fill="#4a4a52"/>
+    <rect x="13" y="4" width="1" height="1" fill="#2d2d33"/>
+    <rect x="9" y="5" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="5" width="2" height="1" fill="#4a4a52"/>
+    <!-- Rows 6-8 -->
+    <rect x="9" y="6" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="6" width="1" height="1" fill="#4a4a52"/>
+    <rect x="13" y="6" width="1" height="1" fill="#2d2d33"/>
+    <rect x="9" y="7" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="7" width="2" height="1" fill="#4a4a52"/>
+    <rect x="9" y="8" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="8" width="1" height="1" fill="#4a4a52"/>
+    <rect x="13" y="8" width="1" height="1" fill="#2d2d33"/>
+    <!-- Rows 9-11 -->
+    <rect x="9" y="9" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="9" width="2" height="1" fill="#4a4a52"/>
+    <rect x="9" y="10" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="10" width="1" height="1" fill="#4a4a52"/>
+    <rect x="13" y="10" width="1" height="1" fill="#2d2d33"/>
+    <rect x="9" y="11" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="11" width="2" height="1" fill="#4a4a52"/>
+    <!-- Rows 12-14 -->
+    <rect x="9" y="12" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="12" width="1" height="1" fill="#4a4a52"/>
+    <rect x="13" y="12" width="1" height="1" fill="#2d2d33"/>
+    <rect x="9" y="13" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="13" width="2" height="1" fill="#4a4a52"/>
+    <rect x="9" y="14" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="14" width="1" height="1" fill="#4a4a52"/>
+    <rect x="13" y="14" width="1" height="1" fill="#2d2d33"/>
+    <!-- Rows 15-17 -->
+    <rect x="9" y="15" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="15" width="2" height="1" fill="#4a4a52"/>
+    <rect x="9" y="16" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="16" width="1" height="1" fill="#4a4a52"/>
+    <rect x="13" y="16" width="1" height="1" fill="#2d2d33"/>
+    <rect x="9" y="17" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="17" width="2" height="1" fill="#4a4a52"/>
+    <!-- Rows 18-20 -->
+    <rect x="9" y="18" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="18" width="1" height="1" fill="#4a4a52"/>
+    <rect x="13" y="18" width="1" height="1" fill="#2d2d33"/>
+    <rect x="9" y="19" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="19" width="2" height="1" fill="#4a4a52"/>
+    <rect x="9" y="20" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="20" width="1" height="1" fill="#4a4a52"/>
+    <rect x="13" y="20" width="1" height="1" fill="#2d2d33"/>
+    <!-- Row 21 -->
+    <rect x="9" y="21" width="6" height="1" fill="#3a3a40"/>
+    <rect x="11" y="21" width="2" height="1" fill="#4a4a52"/>
+
+    <!-- Crossguard -->
+    <rect x="4" y="22" width="16" height="1" fill="#1d1d22"/>
+    <rect x="3" y="23" width="18" height="1" fill="#2a2830"/>
+    <rect x="4" y="23" width="2"  height="1" fill="#3a3a40"/>
+    <rect x="18" y="23" width="2" height="1" fill="#1d1d22"/>
+    <rect x="4" y="24" width="16" height="1" fill="#15141a"/>
+    <rect x="11" y="22" width="2" height="1" fill="#1d1d22"/>
+    <rect x="11" y="23" width="2" height="1" fill="#3a3a40"/>
+
+    <!-- Handle -->
+    <rect x="11" y="25" width="2" height="1" fill="#3a2618"/>
+    <rect x="10" y="26" width="4" height="1" fill="#3a2618"/>
+    <rect x="10" y="26" width="1" height="1" fill="#4a3220"/>
+    <rect x="13" y="26" width="1" height="1" fill="#22140a"/>
+    <rect x="10" y="27" width="4" height="1" fill="#3a2618"/>
+    <rect x="11" y="27" width="2" height="1" fill="#4a3220"/>
+    <rect x="10" y="28" width="4" height="1" fill="#3a2618"/>
+    <rect x="13" y="28" width="1" height="1" fill="#22140a"/>
+    <rect x="10" y="29" width="4" height="1" fill="#3a2618"/>
+    <rect x="11" y="29" width="1" height="1" fill="#4a3220"/>
+    <rect x="12" y="29" width="1" height="1" fill="#22140a"/>
+    <rect x="10" y="30" width="4" height="1" fill="#3a2618"/>
+    <rect x="13" y="30" width="1" height="1" fill="#22140a"/>
+    <rect x="10" y="31" width="4" height="1" fill="#3a2618"/>
+    <rect x="10" y="31" width="1" height="1" fill="#4a3220"/>
+    <rect x="11" y="31" width="2" height="1" fill="#22140a"/>
+
+    <!-- Pommel -->
+    <rect x="9"  y="32" width="6" height="1" fill="#1a0e06"/>
+    <rect x="9"  y="33" width="6" height="1" fill="#2a1a10"/>
+    <rect x="10" y="33" width="4" height="1" fill="#1a0e06"/>
+    <rect x="9"  y="34" width="6" height="1" fill="#0a0604"/>
+    <rect x="11" y="34" width="2" height="1" fill="#2a1a10"/>
+  </g>
+
+  <!-- Enchantment glint overlay (drawn on top of the blade) -->
+  <g opacity="0.85">
+    <!-- Diagonal glint stripe across the blade -->
+    <rect x="9"  y="3"  width="6" height="1" fill="url(#glint)" opacity="0.9"/>
+    <rect x="9"  y="6"  width="6" height="1" fill="url(#glint2)" opacity="0.7"/>
+    <rect x="9"  y="9"  width="6" height="1" fill="url(#glint)" opacity="0.85"/>
+    <rect x="9"  y="12" width="6" height="1" fill="url(#glint2)" opacity="0.7"/>
+    <rect x="9"  y="15" width="6" height="1" fill="url(#glint)" opacity="0.85"/>
+    <rect x="9"  y="18" width="6" height="1" fill="url(#glint2)" opacity="0.75"/>
+    <rect x="9"  y="21" width="6" height="1" fill="url(#glint)" opacity="0.9"/>
+    <!-- Bright highlight pixels on the highlight side -->
+    <rect x="10" y="2"  width="1" height="1" fill="#f0abfc" opacity="0.9"/>
+    <rect x="11" y="5"  width="1" height="1" fill="#22d3ee" opacity="0.9"/>
+    <rect x="10" y="8"  width="1" height="1" fill="#f0abfc" opacity="0.9"/>
+    <rect x="11" y="11" width="1" height="1" fill="#22d3ee" opacity="0.9"/>
+    <rect x="10" y="14" width="1" height="1" fill="#f0abfc" opacity="0.9"/>
+    <rect x="11" y="17" width="1" height="1" fill="#22d3ee" opacity="0.9"/>
+    <rect x="10" y="20" width="1" height="1" fill="#f0abfc" opacity="0.9"/>
+  </g>
 </svg>
